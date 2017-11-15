@@ -15,6 +15,13 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  if (a<= 0) || (c<= 0) || (b<= 0)
+    raise TriangleError
+  end
+  max = [a, b, c].max
+  if a + b + c - max <= max
+    raise TriangleError
+  end
   if (a == b) && (b == c)
     :equilateral
   else
