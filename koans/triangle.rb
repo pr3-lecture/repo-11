@@ -15,14 +15,17 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
-  if a == b == c
+  if (a == b) && (b == c)
     :equilateral
   else
-    if a == b || a == c || b == c
+    if (a == b) || (a == c) || (b == c)
       :isosceles
     else
       :scalene
+    end
+  end
 end
+
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError < StandardError
