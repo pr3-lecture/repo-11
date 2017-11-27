@@ -1,5 +1,6 @@
 ; Übungsblatt in Clisp Jan Luksch, Marc Mehrer
 
+; Aufgabe 1:
 (defun rotiere (l) ; Liefert eine neue Liste in der das vormals erste Element nun das letzte ist
 (append (cdr l) (list (car l))))
 
@@ -38,6 +39,7 @@
      )
  )
 
+; Aufgabe 2b):
  (defun has-child (tree) ;testet ob ein Kindknoten existiert
      (and (not (null tree)) (listp tree)))
 
