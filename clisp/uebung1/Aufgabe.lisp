@@ -1,3 +1,5 @@
+; Übungsblatt in Clisp Jan Luksch, Marc Mehrer
+
 (defun rotiere (l) ; Liefert eine neue Liste in der das vormals erste Element nun das letzte ist
 (append (cdr l) (list (car l))))
 
