@@ -74,7 +74,7 @@
     )
 )
 
-(defun read-file-complete (filename)
+(defun read-file-complete (filename); gibt eine Liste zurück mit allen Werten die aus der Datei gelesen wurden
     (with-open-file (stream filename :direction :input)
         (loop for line = (read stream nil 'eof)
             until(eql line 'eof)
@@ -83,7 +83,7 @@
     )
 )
 
-(defun insert-into-tree (tree l)
+(defun insert-into-tree (tree l); fügt alle Werte die sich in der Liste befinden in den Baum ein
     (if (car l) (insert-into-tree (insert tree (car l)) (cdr l)) tree)
 )
 
@@ -95,7 +95,7 @@
     (print (sort (levelorder tree 0) (lambda (l r) (< (second l) (second r)))))
 )
 
-(defun levelorder (tree level)
+(defun levelorder (tree level); gibt eine Liste von Tupeln zurück in der die Zahl und das Level steht
     (if (get-value tree)
         (append (list (list (get-value tree) level))
                 (levelorder (get-left-subtree tree) (+ level 1))
@@ -132,5 +132,3 @@
 )
 
 (setq tree '(((()2 ()) 5 ()) 10 (() 15 ())))
-
-(print (remove-value tree 1))
